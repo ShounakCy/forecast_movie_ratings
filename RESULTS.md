@@ -1,4 +1,3 @@
-Just Tabular Data
 # Model Training and Evaluation Results
 
 ## Random Forest Model (Initial Data)
@@ -81,3 +80,18 @@ Just Tabular Data
 |------------------------------|----------|----------|----------|---------|-------------------|
 | Random Forest (PCA Features) | 0.079875 | 0.282621 | 0.207066 | 0.607366 | 261.677457        |
 | CatBoost (PCA Features)      | 0.074157 | 0.272318 | 0.200302 | 0.635472 | 15.100364         |
+
+
+## Best Performance
+| Model (Combined Data)        | MSE      | RMSE     | MAE      | R²      | Training Time (s) |
+|------------------------------|----------|----------|----------|---------|-------------------|
+| CatBoost (PCA Features)      | 0.074157 | 0.272318 | 0.200302 | 0.635472 | 15.100364         |
+
+- MSE indicates that the model's predictions are generally close to the actual values, but the squared nature of the error means that larger errors have a disproportionate impact on this metric.
+- An RMSE of 0.272318 suggests that, on average, the model's predictions are about 0.27 units away from the actual values.This provides a more interpretable sense of the magnitude of the errors.
+- The MAE is less sensitive to outliers than MSE or RMSE. An MAE of 0.200302 indicates that, on average, the model's predictions are about 0.20 units away from the actual values, regardless of the direction of the error.
+- The R² value of 0.635472 suggests that the model captures a substantial portion of the variance in the target variable, but there is still room for improvement.
+
+
+
+

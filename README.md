@@ -14,19 +14,28 @@ Your task is to *predict movie ratings* from different modalities of input featu
 - Text
 - Image
 
+# Src
+
+- [main.ipynb](src/main.ipynb)
+
+# Results
+
+- [RESULTS](RESULTS.md)
+
+
 # Data
 
 ## Summary
 
 All data can be found under `data/filtered`. You are free to load it as you wish. The data is provided as
 
-* Tabular data in .csv files:
-    * [actors.csv](data/filtered/actors.csv): the *actors* that are credited in the movies
-    * [directors.csv](data/filtered/directors.csv): the *directors* are credited in the movies 
-    * [movies.csv](data/filtered/movies.csv): movies along with some metadata, including the `rating` variable
-    * [studios.csv](data/filtered/studios.csv): the studio(s) that produced the movies
-* a [zipped file with posters](data/filtered/posters/posters.zip) - for each movie with a given `movie_id`, there is an image in the archive with the name `{movie_id}.jpg`.
-* Pre-computed embeddings for poster, tagline and description data (more information below)
+- Tabular data in .csv files:
+  - [actors.csv](data/filtered/actors.csv): the *actors* that are credited in the movies
+  - [directors.csv](data/filtered/directors.csv): the *directors* are credited in the movies
+  - [movies.csv](data/filtered/movies.csv): movies along with some metadata, including the `rating` variable
+  - [studios.csv](data/filtered/studios.csv): the studio(s) that produced the movies
+- a [zipped file with posters](data/filtered/posters/posters.zip) - for each movie with a given `movie_id`, there is an image in the archive with the name `{movie_id}.jpg`.
+- Pre-computed embeddings for poster, tagline and description data (more information below)
 
 N.b. the column `original_movie_id` exists to preserve a key to the original dataset. You do not need to use it.
 
@@ -34,8 +43,8 @@ N.b. the column `original_movie_id` exists to preserve a key to the original dat
 
 If you have limited computational resources at your disposal, processing images and text can be difficult. We therefore provide pre-computed embeddings for the poster, `tagline` and `description` features.
 
-* The image embeddings have been generated using [OpenAI's CLIP model](https://huggingface.co/openai/clip-vit-base-patch32)
-* The text embeddings have been generated using Nomic's [nomic-embed-text-v1.5](https://huggingface.co/nomic-ai/nomic-embed-text-v1.5)
+- The image embeddings have been generated using [OpenAI's CLIP model](https://huggingface.co/openai/clip-vit-base-patch32)
+- The text embeddings have been generated using Nomic's [nomic-embed-text-v1.5](https://huggingface.co/nomic-ai/nomic-embed-text-v1.5)
 
 If you choose to use these embeddings in your model(s), we expect that you possess a basic understanding of how the models that produced them work.
 
@@ -57,8 +66,8 @@ poster_embeddings[movie_id]
 2. Select the appropriate features to use in your model.
 3. Perform preprocessing and cleaning steps of your choice.
 4. Model training
-    * Train separate models on one or more of the three different modalities (categorical/numerical, text, images) to predict the `rating` property. One modality per model. Choose methods / architectures you find suitable.
-    * Validate your models’ performance in terms of predictive accuracy and generalizability and compare them. You are free to choose relevant metrics for this task.
+    - Train separate models on one or more of the three different modalities (categorical/numerical, text, images) to predict the `rating` property. One modality per model. Choose methods / architectures you find suitable.
+    - Validate your models’ performance in terms of predictive accuracy and generalizability and compare them. You are free to choose relevant metrics for this task.
 5. If you have trained multiple models: combine them or train a new one, to predict `rating` using different modalities of input features. Validate the combined model’s performance.
 6. Present your code, descriptive analysis, and model performance, for example, in  a Jupyter notebook.
 
