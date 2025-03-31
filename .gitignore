@@ -1,0 +1,6 @@
+data/*
+sample_posters/*
+src/catboost_info
+model_logs
+separate_models
+combined_models
